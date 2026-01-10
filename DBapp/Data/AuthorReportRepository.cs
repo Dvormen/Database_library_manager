@@ -13,7 +13,7 @@ namespace DBBooks.Data
         {
             var res = new List<Tables.AuthorReport>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select AuthorName, LoanCount, FirstLoan, LastLoan from authorLoanView", conn);
 
             conn.Open();

@@ -13,7 +13,7 @@ namespace DBBooks.Data
     {
         public void Add(Genre genre)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("insert into BDBgenre(genre) value (@genre)", conn);
 
             query.Parameters.AddWithValue("@genre", genre.GenreName);
@@ -24,7 +24,7 @@ namespace DBBooks.Data
 
         public void Delete(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("delete from BDBgenre where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -37,7 +37,7 @@ namespace DBBooks.Data
         {
             var genres = new List<Genre>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBgenre", conn);
 
             conn.Open();
@@ -57,7 +57,7 @@ namespace DBBooks.Data
 
         public Genre? GetById(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBgenre where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -99,7 +99,7 @@ namespace DBBooks.Data
 
             query.Parameters.AddWithValue("@id", genre.Genre_id);
 
-            using var connection = GetConnection();
+            using var connection = ConfigSetter.GetConnection();
             query.Connection = connection;
             connection.Open();
             query.ExecuteNonQuery();
@@ -107,7 +107,7 @@ namespace DBBooks.Data
 
         public void CsvImportGenre(string filePath)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             conn.Open();
 
             using var tran = conn.BeginTransaction();

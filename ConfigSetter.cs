@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -14,7 +16,7 @@ namespace DBBooks
 
     internal class ConfigSetter
     {
-        public static AppConfig Load()
+        public static SqlConnection GetConnection()
         {
             var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
 
@@ -26,7 +28,8 @@ namespace DBBooks
             }
 
             var json = File.ReadAllText(path);
-            return JsonSerializer.Deserialize<AppConfig>(json);
+            var appConfig = JsonSerializer.Deserialize<AppConfig>(json);
+            return new SqlConnection(appConfig.ConnectionString);
         }
     }
 }

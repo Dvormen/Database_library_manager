@@ -13,7 +13,7 @@ namespace DBBooks.Data
     {
         public void Add(Author author)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("insert into BDBauthor(firstName, lastName) values (@firstName, @lastName)", conn);
 
             query.Parameters.AddWithValue("@firstName", author.FirstName);
@@ -25,7 +25,7 @@ namespace DBBooks.Data
 
         public void Delete(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("delete from BDBauthor where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -38,7 +38,7 @@ namespace DBBooks.Data
         {
             var authors = new List<Author>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBauthor", conn);
 
             conn.Open();
@@ -59,7 +59,7 @@ namespace DBBooks.Data
 
         public Author? GetById(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBauthor where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -108,7 +108,7 @@ namespace DBBooks.Data
 
             query.Parameters.AddWithValue("@id", author.Author_id);
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             query.Connection = conn;
             conn.Open();
             query.ExecuteNonQuery();
@@ -116,7 +116,7 @@ namespace DBBooks.Data
 
         public void CsvImportAuthors(string filePath)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             conn.Open();
 
             using var tran = conn.BeginTransaction();

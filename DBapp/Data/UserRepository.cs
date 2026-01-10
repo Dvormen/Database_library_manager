@@ -13,7 +13,7 @@ namespace DBBooks.Data
     {
         public void Add(User user)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("insert into BDBuser(username, email) values (@username,@email)", conn);
 
             query.Parameters.AddWithValue("@username", user.Username);
@@ -25,7 +25,7 @@ namespace DBBooks.Data
 
         public void Delete(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("delete from BDBuser where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -38,7 +38,7 @@ namespace DBBooks.Data
         {
             var users = new List<User>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBuser", conn);
 
             conn.Open();
@@ -59,7 +59,7 @@ namespace DBBooks.Data
 
         public User? GetById(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBuser where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -108,7 +108,7 @@ namespace DBBooks.Data
 
             query.Parameters.AddWithValue("@id", user.User_id);
 
-            using var connection = GetConnection();
+            using var connection = ConfigSetter.GetConnection();
             query.Connection = connection;
             connection.Open();
             query.ExecuteNonQuery();

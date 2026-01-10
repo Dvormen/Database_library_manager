@@ -12,7 +12,7 @@ namespace DBBooks.Data
     {
         public void Add(Book book)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand(
                 "insert into BDBbooks(title,price,available,state,genre_id,author_id) values (@title,@price,@available,@state,@genre_id,@author_id)", conn);
 
@@ -29,7 +29,7 @@ namespace DBBooks.Data
 
         public void Delete(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("delete from BDBbooks where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -42,7 +42,7 @@ namespace DBBooks.Data
         {
             var books = new List<Book>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBbooks", conn);
 
             conn.Open();
@@ -68,7 +68,7 @@ namespace DBBooks.Data
 
         public Book? GetById(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBbooks where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -145,7 +145,7 @@ namespace DBBooks.Data
 
             query.Parameters.AddWithValue("@id", book.Book_id);
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             query.Connection = conn;
             conn.Open();
             query.ExecuteNonQuery();

@@ -7,7 +7,7 @@ namespace DBBooks.Data
     {
         public void Add(Loan loan)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("insert into BDBloan(pickUpDate,returnDate,us_id,book_id) values (@pickUpDate,@returnDate,@us_id,@book_id)", conn);
 
             query.Parameters.AddWithValue("@pickUpDate", loan.PickUpDate);
@@ -21,7 +21,7 @@ namespace DBBooks.Data
 
         public void Delete(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("delete from BDBloan where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -34,7 +34,7 @@ namespace DBBooks.Data
         {
             var loans = new List<Loan>();
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBloan", conn);
 
             conn.Open();
@@ -60,7 +60,7 @@ namespace DBBooks.Data
 
         public Loan? GetById(int id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             using var query = new SqlCommand("select * from BDBloan where id = @id", conn);
 
             query.Parameters.AddWithValue("@id", id);
@@ -123,7 +123,7 @@ namespace DBBooks.Data
 
             query.Parameters.AddWithValue("@id", loan.Loan_id);
 
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             query.Connection = conn;
             conn.Open();
             query.ExecuteNonQuery();
@@ -131,7 +131,7 @@ namespace DBBooks.Data
 
         public void BorrowBook(int book_id, int user_id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             conn.Open();
 
             using var tran = conn.BeginTransaction();
@@ -174,7 +174,7 @@ namespace DBBooks.Data
 
         public void ReturnBook(int loan_id)
         {
-            using var conn = GetConnection();
+            using var conn = ConfigSetter.GetConnection();
             conn.Open();
 
             using var tran = conn.BeginTransaction();
