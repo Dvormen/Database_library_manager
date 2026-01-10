@@ -33,6 +33,10 @@
             UsernameColumn = new DataGridViewTextBoxColumn();
             EmailColumn = new DataGridViewTextBoxColumn();
             dataGridView_books = new DataGridView();
+            textBox_user_id = new TextBox();
+            textBox_book_id = new TextBox();
+            button_pickUp = new Button();
+            button_back = new Button();
             IdColumnBooks = new DataGridViewTextBoxColumn();
             TitleColumn = new DataGridViewTextBoxColumn();
             PriceColumn = new DataGridViewTextBoxColumn();
@@ -40,10 +44,6 @@
             StateColumn = new DataGridViewTextBoxColumn();
             GenreColumn = new DataGridViewTextBoxColumn();
             AuthorColumn = new DataGridViewTextBoxColumn();
-            textBox_user_id = new TextBox();
-            textBox_book_id = new TextBox();
-            button_pickUp = new Button();
-            button_back = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_books).BeginInit();
             SuspendLayout();
@@ -89,48 +89,6 @@
             dataGridView_books.Size = new Size(807, 342);
             dataGridView_books.TabIndex = 1;
             // 
-            // IdColumnBooks
-            // 
-            IdColumnBooks.HeaderText = "ID";
-            IdColumnBooks.Name = "IdColumnBooks";
-            IdColumnBooks.ReadOnly = true;
-            // 
-            // TitleColumn
-            // 
-            TitleColumn.HeaderText = "Title";
-            TitleColumn.Name = "TitleColumn";
-            TitleColumn.ReadOnly = true;
-            // 
-            // PriceColumn
-            // 
-            PriceColumn.HeaderText = "Price";
-            PriceColumn.Name = "PriceColumn";
-            PriceColumn.ReadOnly = true;
-            // 
-            // AvailableColumn
-            // 
-            AvailableColumn.HeaderText = "Available";
-            AvailableColumn.Name = "AvailableColumn";
-            AvailableColumn.ReadOnly = true;
-            // 
-            // StateColumn
-            // 
-            StateColumn.HeaderText = "State";
-            StateColumn.Name = "StateColumn";
-            StateColumn.ReadOnly = true;
-            // 
-            // GenreColumn
-            // 
-            GenreColumn.HeaderText = "Genre ID";
-            GenreColumn.Name = "GenreColumn";
-            GenreColumn.ReadOnly = true;
-            // 
-            // AuthorColumn
-            // 
-            AuthorColumn.HeaderText = "Author ID";
-            AuthorColumn.Name = "AuthorColumn";
-            AuthorColumn.ReadOnly = true;
-            // 
             // textBox_user_id
             // 
             textBox_user_id.Location = new Point(76, 394);
@@ -167,6 +125,55 @@
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
             // 
+            // IdColumnBooks
+            // 
+            IdColumnBooks.DataPropertyName = "Book_id";
+            IdColumnBooks.HeaderText = "ID";
+            IdColumnBooks.Name = "IdColumnBooks";
+            IdColumnBooks.ReadOnly = true;
+            // 
+            // TitleColumn
+            // 
+            TitleColumn.DataPropertyName = "BookTitle";
+            TitleColumn.HeaderText = "Title";
+            TitleColumn.Name = "TitleColumn";
+            TitleColumn.ReadOnly = true;
+            // 
+            // PriceColumn
+            // 
+            PriceColumn.DataPropertyName = "Price";
+            PriceColumn.HeaderText = "Price";
+            PriceColumn.Name = "PriceColumn";
+            PriceColumn.ReadOnly = true;
+            // 
+            // AvailableColumn
+            // 
+            AvailableColumn.DataPropertyName = "Available";
+            AvailableColumn.HeaderText = "Available";
+            AvailableColumn.Name = "AvailableColumn";
+            AvailableColumn.ReadOnly = true;
+            // 
+            // StateColumn
+            // 
+            StateColumn.DataPropertyName = "State";
+            StateColumn.HeaderText = "State";
+            StateColumn.Name = "StateColumn";
+            StateColumn.ReadOnly = true;
+            // 
+            // GenreColumn
+            // 
+            GenreColumn.DataPropertyName = "Genre_id";
+            GenreColumn.HeaderText = "Genre ID";
+            GenreColumn.Name = "GenreColumn";
+            GenreColumn.ReadOnly = true;
+            // 
+            // AuthorColumn
+            // 
+            AuthorColumn.DataPropertyName = "Author_id";
+            AuthorColumn.HeaderText = "Author ID";
+            AuthorColumn.Name = "AuthorColumn";
+            AuthorColumn.ReadOnly = true;
+            // 
             // LoanPickUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -194,6 +201,10 @@
         private DataGridViewTextBoxColumn UsernameColumn;
         private DataGridViewTextBoxColumn EmailColumn;
         private DataGridView dataGridView_books;
+        private TextBox textBox_user_id;
+        private TextBox textBox_book_id;
+        private Button button_pickUp;
+        private Button button_back;
         private DataGridViewTextBoxColumn IdColumnBooks;
         private DataGridViewTextBoxColumn TitleColumn;
         private DataGridViewTextBoxColumn PriceColumn;
@@ -201,9 +212,5 @@
         private DataGridViewTextBoxColumn StateColumn;
         private DataGridViewTextBoxColumn GenreColumn;
         private DataGridViewTextBoxColumn AuthorColumn;
-        private TextBox textBox_user_id;
-        private TextBox textBox_book_id;
-        private Button button_pickUp;
-        private Button button_back;
     }
 }

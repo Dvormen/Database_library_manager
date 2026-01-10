@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            button_add = new Button();
+            button_update = new Button();
+            button_delete = new Button();
             IDColumn = new DataGridViewTextBoxColumn();
             TitleColumn = new DataGridViewTextBoxColumn();
             PriceColumn = new DataGridViewTextBoxColumn();
@@ -36,9 +39,6 @@
             StateColumn = new DataGridViewTextBoxColumn();
             AuthorColumn = new DataGridViewTextBoxColumn();
             GenreColumn = new DataGridViewTextBoxColumn();
-            button_add = new Button();
-            button_update = new Button();
-            button_delete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,6 +51,36 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(776, 361);
             dataGridView1.TabIndex = 0;
+            // 
+            // button_add
+            // 
+            button_add.Location = new Point(31, 403);
+            button_add.Name = "button_add";
+            button_add.Size = new Size(75, 23);
+            button_add.TabIndex = 1;
+            button_add.Text = "Add";
+            button_add.UseVisualStyleBackColor = true;
+            button_add.Click += button_add_Click;
+            // 
+            // button_update
+            // 
+            button_update.Location = new Point(112, 403);
+            button_update.Name = "button_update";
+            button_update.Size = new Size(75, 23);
+            button_update.TabIndex = 2;
+            button_update.Text = "Update";
+            button_update.UseVisualStyleBackColor = true;
+            button_update.Click += button_update_Click;
+            // 
+            // button_delete
+            // 
+            button_delete.Location = new Point(193, 403);
+            button_delete.Name = "button_delete";
+            button_delete.Size = new Size(75, 23);
+            button_delete.TabIndex = 3;
+            button_delete.Text = "Delete";
+            button_delete.UseVisualStyleBackColor = true;
+            button_delete.Click += button_delete_Click;
             // 
             // IDColumn
             // 
@@ -89,45 +119,17 @@
             // 
             // AuthorColumn
             // 
+            AuthorColumn.DataPropertyName = "Author_id";
             AuthorColumn.HeaderText = "Author";
             AuthorColumn.Name = "AuthorColumn";
             AuthorColumn.ReadOnly = true;
             // 
             // GenreColumn
             // 
+            GenreColumn.DataPropertyName = "Genre_id";
             GenreColumn.HeaderText = "Genre";
             GenreColumn.Name = "GenreColumn";
             GenreColumn.ReadOnly = true;
-            // 
-            // button_add
-            // 
-            button_add.Location = new Point(31, 403);
-            button_add.Name = "button_add";
-            button_add.Size = new Size(75, 23);
-            button_add.TabIndex = 1;
-            button_add.Text = "Add";
-            button_add.UseVisualStyleBackColor = true;
-            button_add.Click += button_add_Click;
-            // 
-            // button_update
-            // 
-            button_update.Location = new Point(112, 403);
-            button_update.Name = "button_update";
-            button_update.Size = new Size(75, 23);
-            button_update.TabIndex = 2;
-            button_update.Text = "Update";
-            button_update.UseVisualStyleBackColor = true;
-            button_update.Click += button_update_Click;
-            // 
-            // button_delete
-            // 
-            button_delete.Location = new Point(193, 403);
-            button_delete.Name = "button_delete";
-            button_delete.Size = new Size(75, 23);
-            button_delete.TabIndex = 3;
-            button_delete.Text = "Delete";
-            button_delete.UseVisualStyleBackColor = true;
-            button_delete.Click += button_delete_Click;
             // 
             // BookForm
             // 
@@ -148,6 +150,9 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button button_add;
+        private Button button_update;
+        private Button button_delete;
         private DataGridViewTextBoxColumn IDColumn;
         private DataGridViewTextBoxColumn TitleColumn;
         private DataGridViewTextBoxColumn PriceColumn;
@@ -155,8 +160,5 @@
         private DataGridViewTextBoxColumn StateColumn;
         private DataGridViewTextBoxColumn AuthorColumn;
         private DataGridViewTextBoxColumn GenreColumn;
-        private Button button_add;
-        private Button button_update;
-        private Button button_delete;
     }
 }

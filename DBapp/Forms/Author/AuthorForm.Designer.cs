@@ -94,6 +94,7 @@
             // 
             // LastNameColumn
             // 
+            LastNameColumn.DataPropertyName = "LastName";
             LastNameColumn.HeaderText = "Last Name";
             LastNameColumn.Name = "LastNameColumn";
             LastNameColumn.ReadOnly = true;
