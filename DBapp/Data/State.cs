@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Represents the condition or state of a book.
+    /// </summary>
     internal enum State
     {
         New,

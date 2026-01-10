@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Generic repository interface defining basic CRUD operations.
+    /// </summary>
+    /// <typeparam name="T">Type of the entity.</typeparam>
     internal interface IRepository<T>
     {
         List<T> GetAll();

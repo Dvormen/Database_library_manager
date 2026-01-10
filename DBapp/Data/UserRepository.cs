@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class for managing User entities.
+    /// </summary>
     internal class UserRepository : Repository, IRepository<User>
     {
+        /// <summary>
+        /// Adds a new user to the database.
+        /// </summary>
+        /// <param name="user">User entity to be added.</param>
         public void Add(User user)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -23,6 +30,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes a user from the database by ID.
+        /// </summary>
+        /// <param name="id">ID of the user to delete.</param>
         public void Delete(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -34,6 +45,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Retrieves all users from the database.
+        /// </summary>
+        /// <returns>List of all users.</returns>
         public List<User> GetAll()
         {
             var users = new List<User>();
@@ -57,6 +72,11 @@ namespace DBBooks.Data
             return users;
         }
 
+        /// <summary>
+        /// Retrieves a user by its ID.
+        /// </summary>
+        /// <param name="id">ID of the user.</param>
+        /// <returns>The user if found; otherwise null.</returns>
         public User? GetById(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -82,6 +102,10 @@ namespace DBBooks.Data
             return member;
         }
 
+        /// <summary>
+        /// Updates an existing user in the database.
+        /// </summary>
+        /// <param name="user">User entity containing updated values.</param>
         public void Update(User user)
         {
             var update = new List<string>();

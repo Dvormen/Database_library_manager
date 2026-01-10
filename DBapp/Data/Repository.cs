@@ -9,11 +9,18 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Base repository class providing shared functionality for all repositories.
+    /// </summary>
     internal abstract class Repository
     {
         protected string connectionString;
 
-      public static AppConfig Load()
+        /// <summary>
+        /// Loads application configuration from appsettings.json.
+        /// </summary>
+        /// <returns>An AppConfig object containing the configuration settings.</returns>
+        public static AppConfig Load()
         {
             var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");
 

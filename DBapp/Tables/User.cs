@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Tables
 {
+    /// <summary>
+    /// Represents a user entity.
+    /// </summary>
     internal class User
     {
         public int User_id { get; set; }

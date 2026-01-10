@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class for managing Book entities.
+    /// </summary>
     internal class BookRepository : Repository, IRepository<Book>
     {
+        /// <summary>
+        /// Adds a new book to the database.
+        /// </summary>
+        /// <param name="book">Book entity to be added.</param>
         public void Add(Book book)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -27,6 +34,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes a book from the database by ID.
+        /// </summary>
+        /// <param name="id">ID of the book to delete.</param>
         public void Delete(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -38,6 +49,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Retrieves all books from the database.
+        /// </summary>
+        /// <returns>List of all books.</returns>
         public List<Book> GetAll()
         {
             var books = new List<Book>();
@@ -66,6 +81,11 @@ namespace DBBooks.Data
             return books;
         }
 
+        /// <summary>
+        /// Retrieves a book by its ID.
+        /// </summary>
+        /// <param name="id">ID of the book.</param>
+        /// <returns>The book if found; otherwise null.</returns>
         public Book? GetById(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -95,6 +115,10 @@ namespace DBBooks.Data
             return book;
         }
 
+        /// <summary>
+        /// Updates an existing book in the database.
+        /// </summary>
+        /// <param name="book">Book entity containing updated values.</param>
         public void Update(Book book)
         {
             var update = new List<string>();

@@ -9,13 +9,22 @@ using System.Threading.Tasks;
 
 namespace DBBooks
 {
+    /// <summary>
+    /// Represents application configuration settings.
+    /// </summary>
     public class AppConfig
     {
         public string ConnectionString { get; set; }
     }
-
+    /// <summary>
+    /// Provides methods to create database connections using configuration.
+    /// </summary>
     internal class ConfigSetter
     {
+        /// <summary>
+        /// Creates and returns a new SQL database connection using the connection string from appsettings.json.
+        /// </summary>
+        /// <returns>A SqlConnection object initialized with the connection string.</returns>
         public static SqlConnection GetConnection()
         {
             var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json");

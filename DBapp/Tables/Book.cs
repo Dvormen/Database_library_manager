@@ -7,6 +7,9 @@ using static System.Windows.Forms.AxHost;
 
 namespace DBBooks.Tables
 {
+    /// <summary>
+    /// Represents a book entity.
+    /// </summary>
     internal class Book
     {
         

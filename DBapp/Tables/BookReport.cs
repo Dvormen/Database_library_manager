@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Tables
 {
+    /// <summary>
+    /// Represents a report containing loan statistics for a book.
+    /// </summary>
     internal class BookReport
     {
         public string BookTitle { get; set; }

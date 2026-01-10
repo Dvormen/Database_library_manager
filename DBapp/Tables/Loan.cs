@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Tables
 {
+    /// <summary>
+    /// Represents a loan entity for tracking book loans by users.
+    /// </summary>
     internal class Loan
     {
         public int Loan_id { get; set; }

@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class for managing Author entities.
+    /// </summary>
     internal class AuthorRepository : Repository, IRepository<Author>
     {
+        /// <summary>
+        /// Adds a new author to the database.
+        /// </summary>
+        /// <param name="author">Author entity to be added.</param>
         public void Add(Author author)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -23,6 +30,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes an author from the database by ID.
+        /// </summary>
+        /// <param name="id">ID of the author to delete.</param>
         public void Delete(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -34,6 +45,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Retrieves all authors from the database.
+        /// </summary>
+        /// <returns>List of all authors.</returns>
         public List<Author> GetAll()
         {
             var authors = new List<Author>();
@@ -57,6 +72,11 @@ namespace DBBooks.Data
             return authors;
         }
 
+        /// <summary>
+        /// Retrieves an author by its ID.
+        /// </summary>
+        /// <param name="id">ID of the author.</param>
+        /// <returns>The author if found; otherwise null.</returns>
         public Author? GetById(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -82,6 +102,10 @@ namespace DBBooks.Data
             return author;
         }
 
+        /// <summary>
+        /// Updates an existing author in the database.
+        /// </summary>
+        /// <param name="author">Author entity containing updated values.</param>
         public void Update(Author author)
         {
             var update = new List<string>();
@@ -114,6 +138,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Imports authors from a CSV file into the database.
+        /// </summary>
+        /// <param name="filePath">Path to the CSV file.</param>
         public void CsvImportAuthors(string filePath)
         {
             using var conn = ConfigSetter.GetConnection();

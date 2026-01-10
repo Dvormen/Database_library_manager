@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class used for accessing author loan report data.
+    /// </summary>
     internal class AuthorReportRepository : Repository
     {
+        /// <summary>
+        /// Returns loan statistics for each author.
+        /// </summary>
+        /// <returns>A list of AuthorReport objects containing author loan statistics.</returns>
         public List<Tables.AuthorReport> GetAuthorLoanStats()
         {
             var res = new List<Tables.AuthorReport>();

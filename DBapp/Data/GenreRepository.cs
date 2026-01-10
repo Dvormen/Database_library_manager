@@ -9,8 +9,15 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class for managing Genre entities.
+    /// </summary>
     internal class GenreRepository : Repository, IRepository<Tables.Genre>
     {
+        /// <summary>
+        /// Adds a new genre to the database.
+        /// </summary>
+        /// <param name="genre">Genre entity to be added.</param>
         public void Add(Genre genre)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -22,6 +29,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes a genre from the database by ID.
+        /// </summary>
+        /// <param name="id">ID of the genre to delete.</param>
         public void Delete(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -33,6 +44,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Retrieves all genres from the database.
+        /// </summary>
+        /// <returns>List of all genres.</returns>
         public List<Genre> GetAll()
         {
             var genres = new List<Genre>();
@@ -55,6 +70,11 @@ namespace DBBooks.Data
             return genres;
         }
 
+        /// <summary>
+        /// Retrieves a genre by its ID.
+        /// </summary>
+        /// <param name="id">ID of the genre.</param>
+        /// <returns>The genre if found; otherwise null.</returns>
         public Genre? GetById(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -79,6 +99,12 @@ namespace DBBooks.Data
             return category;
         }
 
+
+
+        /// <summary>
+        /// Updates an existing genre in the database.
+        /// </summary>
+        /// <param name="genre">Genre entity containing updated values.</param>
         public void Update(Genre genre)
         {
             var update = new List<string>();
@@ -105,6 +131,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Imports genres from a CSV file into the database.
+        /// </summary>
+        /// <param name="filePath">Path to the CSV file.</param>
         public void CsvImportGenre(string filePath)
         {
             using var conn = ConfigSetter.GetConnection();

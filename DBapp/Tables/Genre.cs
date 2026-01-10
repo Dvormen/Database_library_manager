@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DBBooks.Tables
 {
+    /// <summary>
+    /// Represents a genre entity.
+    /// </summary>
     internal class Genre
     {
         public int Genre_id { get; set; }

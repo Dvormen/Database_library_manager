@@ -3,8 +3,15 @@ using System.Data.SqlClient;
 
 namespace DBBooks.Data
 {
+    /// <summary>
+    /// Repository class for managing Loan entities.
+    /// </summary>
     internal class LoanRepository : Repository, IRepository<Loan>
     {
+        /// <summary>
+        /// Adds a new loan to the database.
+        /// </summary>
+        /// <param name="loan">Loan entity to be added.</param>
         public void Add(Loan loan)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -19,6 +26,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Deletes a loan from the database by ID.
+        /// </summary>
+        /// <param name="id">ID of the loan to delete.</param>
         public void Delete(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -30,6 +41,10 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Retrieves all loans from the database.
+        /// </summary>
+        /// <returns>List of all loans.</returns>
         public List<Loan> GetAll()
         {
             var loans = new List<Loan>();
@@ -58,6 +73,11 @@ namespace DBBooks.Data
             return loans;
         }
 
+        /// <summary>
+        /// Retrieves a loan by its ID.
+        /// </summary>
+        /// <param name="id">ID of the loan.</param>
+        /// <returns>The loan if found; otherwise null.</returns>
         public Loan? GetById(int id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -85,6 +105,10 @@ namespace DBBooks.Data
             return loan;
         }
 
+        /// <summary>
+        /// Updates an existing loan in the database.
+        /// </summary>
+        /// <param name="loan">Loan entity containing updated values.</param>
         public void Update(Loan loan)
         {
             var update = new List<string>();
@@ -129,6 +153,11 @@ namespace DBBooks.Data
             query.ExecuteNonQuery();
         }
 
+        /// <summary>
+        /// Creates a new loan for a book and marks the book as unavailable.
+        /// </summary>
+        /// <param name="book_id">ID of the book to borrow.</param>
+        /// <param name="user_id">ID of the user borrowing the book.</param>
         public void BorrowBook(int book_id, int user_id)
         {
             using var conn = ConfigSetter.GetConnection();
@@ -172,6 +201,10 @@ namespace DBBooks.Data
             }
         }
 
+        /// <summary>
+        /// Returns a borrowed book and marks it as available.
+        /// </summary>
+        /// <param name="loan_id">ID of the loan.</param>
         public void ReturnBook(int loan_id)
         {
             using var conn = ConfigSetter.GetConnection();
