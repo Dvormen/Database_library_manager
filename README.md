@@ -46,7 +46,7 @@ Windows Forms application for library database manipulation.
 
 ---
 
-## Running the Program
+## After running the program
 
 First thing you will see is the menu with links to access tables and reports.
 
