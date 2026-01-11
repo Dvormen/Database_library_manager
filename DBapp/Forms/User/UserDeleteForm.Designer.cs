@@ -69,7 +69,9 @@
             Controls.Add(textBox_id);
             Controls.Add(button_back);
             Controls.Add(button_delete);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "UserDeleteForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
             ResumeLayout(false);
             PerformLayout();

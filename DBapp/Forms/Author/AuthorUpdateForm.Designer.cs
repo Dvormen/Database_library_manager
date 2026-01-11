@@ -89,7 +89,9 @@
             Controls.Add(textBox_lastName);
             Controls.Add(textBox_firstName);
             Controls.Add(textBox_id);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AuthorUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Author";
             ResumeLayout(false);
             PerformLayout();

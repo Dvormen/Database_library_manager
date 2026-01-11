@@ -88,7 +88,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(672, 442);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "BookReportForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Book Report";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

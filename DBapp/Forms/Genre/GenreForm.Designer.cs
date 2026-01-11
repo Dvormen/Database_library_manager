@@ -100,7 +100,9 @@
             Controls.Add(button_update);
             Controls.Add(button_add);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "GenreForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Genre";
             Load += GenreForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

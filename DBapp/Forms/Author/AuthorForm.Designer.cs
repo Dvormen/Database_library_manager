@@ -108,7 +108,9 @@
             Controls.Add(button_delete);
             Controls.Add(button_update);
             Controls.Add(button_add);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AuthorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Author";
             Load += AuthorForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

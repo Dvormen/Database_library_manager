@@ -21,9 +21,9 @@ namespace DBBooks.Data
         public void Add(Genre genre)
         {
             using var conn = ConfigSetter.GetConnection();
-            using var query = new SqlCommand("insert into BDBgenre(genre) value (@genre)", conn);
+            using var query = new SqlCommand("insert into BDBgenre(genre) values (@genre)", conn);
 
-            query.Parameters.AddWithValue("@genre", genre.GenreName);
+            query.Parameters.AddWithValue("@genre", genre.GenreName.ToLower());
 
             conn.Open();
             query.ExecuteNonQuery();

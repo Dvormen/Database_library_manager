@@ -69,7 +69,9 @@
             Controls.Add(textBox_id);
             Controls.Add(button_back);
             Controls.Add(button_return);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoanReturnForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Loan";
             ResumeLayout(false);
             PerformLayout();

@@ -79,7 +79,9 @@
             Controls.Add(button_update);
             Controls.Add(textBox_genre);
             Controls.Add(textBox_id);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "GenreUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Genre";
             ResumeLayout(false);
             PerformLayout();

@@ -89,7 +89,9 @@
             Controls.Add(button_update);
             Controls.Add(textBox_username);
             Controls.Add(textBox_id);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "UserUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
             ResumeLayout(false);
             PerformLayout();

@@ -108,7 +108,9 @@
             Controls.Add(button_update);
             Controls.Add(button_add);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "UserForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
             Load += UserForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

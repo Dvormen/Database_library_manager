@@ -69,7 +69,9 @@
             Controls.Add(textBox_id);
             Controls.Add(button_back);
             Controls.Add(button_delete);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "BookDeleteForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Book";
             ResumeLayout(false);
             PerformLayout();

@@ -81,7 +81,9 @@
             Controls.Add(textBox_genre);
             Controls.Add(button_back);
             Controls.Add(button_add);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "GenreAddForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Genre";
             ResumeLayout(false);
             PerformLayout();

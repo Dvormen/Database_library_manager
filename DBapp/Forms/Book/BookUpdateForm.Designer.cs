@@ -142,7 +142,9 @@
             Controls.Add(textBox_genre);
             Controls.Add(textBox_price);
             Controls.Add(textBox_title);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "BookUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Book";
             ResumeLayout(false);
             PerformLayout();

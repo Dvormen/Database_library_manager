@@ -79,7 +79,9 @@
             Controls.Add(textBox_username);
             Controls.Add(button_back);
             Controls.Add(button_add);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "UserAddForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User";
             ResumeLayout(false);
             PerformLayout();

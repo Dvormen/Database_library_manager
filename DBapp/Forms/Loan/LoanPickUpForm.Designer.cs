@@ -33,10 +33,6 @@
             UsernameColumn = new DataGridViewTextBoxColumn();
             EmailColumn = new DataGridViewTextBoxColumn();
             dataGridView_books = new DataGridView();
-            textBox_user_id = new TextBox();
-            textBox_book_id = new TextBox();
-            button_pickUp = new Button();
-            button_back = new Button();
             IdColumnBooks = new DataGridViewTextBoxColumn();
             TitleColumn = new DataGridViewTextBoxColumn();
             PriceColumn = new DataGridViewTextBoxColumn();
@@ -44,6 +40,10 @@
             StateColumn = new DataGridViewTextBoxColumn();
             GenreColumn = new DataGridViewTextBoxColumn();
             AuthorColumn = new DataGridViewTextBoxColumn();
+            textBox_user_id = new TextBox();
+            textBox_book_id = new TextBox();
+            button_pickUp = new Button();
+            button_back = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView_user).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView_books).BeginInit();
             SuspendLayout();
@@ -88,42 +88,6 @@
             dataGridView_books.ReadOnly = true;
             dataGridView_books.Size = new Size(807, 342);
             dataGridView_books.TabIndex = 1;
-            // 
-            // textBox_user_id
-            // 
-            textBox_user_id.Location = new Point(76, 394);
-            textBox_user_id.Name = "textBox_user_id";
-            textBox_user_id.PlaceholderText = "User ID";
-            textBox_user_id.Size = new Size(100, 23);
-            textBox_user_id.TabIndex = 2;
-            // 
-            // textBox_book_id
-            // 
-            textBox_book_id.Location = new Point(227, 394);
-            textBox_book_id.Name = "textBox_book_id";
-            textBox_book_id.PlaceholderText = "Book ID";
-            textBox_book_id.Size = new Size(100, 23);
-            textBox_book_id.TabIndex = 3;
-            // 
-            // button_pickUp
-            // 
-            button_pickUp.Location = new Point(375, 394);
-            button_pickUp.Name = "button_pickUp";
-            button_pickUp.Size = new Size(75, 23);
-            button_pickUp.TabIndex = 4;
-            button_pickUp.Text = "Pick Up";
-            button_pickUp.UseVisualStyleBackColor = true;
-            button_pickUp.Click += button_pickUp_Click;
-            // 
-            // button_back
-            // 
-            button_back.Location = new Point(491, 394);
-            button_back.Name = "button_back";
-            button_back.Size = new Size(75, 23);
-            button_back.TabIndex = 5;
-            button_back.Text = "Back";
-            button_back.UseVisualStyleBackColor = true;
-            button_back.Click += button_back_Click;
             // 
             // IdColumnBooks
             // 
@@ -174,6 +138,42 @@
             AuthorColumn.Name = "AuthorColumn";
             AuthorColumn.ReadOnly = true;
             // 
+            // textBox_user_id
+            // 
+            textBox_user_id.Location = new Point(76, 394);
+            textBox_user_id.Name = "textBox_user_id";
+            textBox_user_id.PlaceholderText = "User ID";
+            textBox_user_id.Size = new Size(100, 23);
+            textBox_user_id.TabIndex = 2;
+            // 
+            // textBox_book_id
+            // 
+            textBox_book_id.Location = new Point(227, 394);
+            textBox_book_id.Name = "textBox_book_id";
+            textBox_book_id.PlaceholderText = "Book ID";
+            textBox_book_id.Size = new Size(100, 23);
+            textBox_book_id.TabIndex = 3;
+            // 
+            // button_pickUp
+            // 
+            button_pickUp.Location = new Point(375, 394);
+            button_pickUp.Name = "button_pickUp";
+            button_pickUp.Size = new Size(75, 23);
+            button_pickUp.TabIndex = 4;
+            button_pickUp.Text = "Pick Up";
+            button_pickUp.UseVisualStyleBackColor = true;
+            button_pickUp.Click += button_pickUp_Click;
+            // 
+            // button_back
+            // 
+            button_back.Location = new Point(491, 394);
+            button_back.Name = "button_back";
+            button_back.Size = new Size(75, 23);
+            button_back.TabIndex = 5;
+            button_back.Text = "Back";
+            button_back.UseVisualStyleBackColor = true;
+            button_back.Click += button_back_Click;
+            // 
             // LoanPickUpForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,7 +185,9 @@
             Controls.Add(textBox_user_id);
             Controls.Add(dataGridView_books);
             Controls.Add(dataGridView_user);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoanPickUpForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Loan";
             Load += LoanPickUp_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView_user).EndInit();

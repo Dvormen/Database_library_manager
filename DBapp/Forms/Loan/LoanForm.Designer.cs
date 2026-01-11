@@ -112,7 +112,9 @@
             Controls.Add(button_return);
             Controls.Add(button_pickUp);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoanForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Loan";
             Load += LoanForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

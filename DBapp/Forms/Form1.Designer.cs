@@ -133,7 +133,9 @@
             Controls.Add(genre_link);
             Controls.Add(book_link);
             Controls.Add(author_link);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             ResumeLayout(false);
             PerformLayout();

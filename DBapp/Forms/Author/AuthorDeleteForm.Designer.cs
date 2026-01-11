@@ -69,7 +69,9 @@
             Controls.Add(textBox_Id);
             Controls.Add(button_back);
             Controls.Add(button_delete);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Author";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Author";
             ResumeLayout(false);
             PerformLayout();
