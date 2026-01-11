@@ -1,25 +1,25 @@
 create table BDBauthor(
 id int primary key identity(1,1),
-firstName varchar(50),
-lastName varchar(50)
+firstName varchar(50) not null,
+lastName varchar(50) not null
 )
 
 create table BDBgenre(
 id int primary key identity(1,1),
-genre varchar(50)
+genre varchar(50) not null
 )
 
 create table BDBuser(
 id int primary key identity(1,1),
-username varchar(50),
-email varchar(50)
+username varchar(50) not null,
+email varchar(50) not null
 )
 
 create table BDBbooks(
 id int primary key identity(1,1),
-title varchar(50),
-price decimal(10,2),
-available bit,
+title varchar(50) not null,
+price decimal(10,2) not null,
+available bit not null,
 state varchar(50) not null           
 check (state IN ('New', 'Damaged', 'Torn', 'Used')),
 genre_id int foreign key references BDBgenre(id),
@@ -28,7 +28,7 @@ author_id int foreign key references BDBauthor(id)
 
 create table BDBloan(
 id int primary key identity(1,1),
-pickUpDate date,
+pickUpDate date not null,
 returnDate date,
 us_id int foreign key references BDBuser(id),
 book_id int foreign key references BDBbooks(id)
