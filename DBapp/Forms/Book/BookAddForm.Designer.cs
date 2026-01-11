@@ -59,7 +59,7 @@
             // 
             textBox_genre.Location = new Point(12, 64);
             textBox_genre.Name = "textBox_genre";
-            textBox_genre.PlaceholderText = "Genre";
+            textBox_genre.PlaceholderText = "Genre id";
             textBox_genre.Size = new Size(100, 23);
             textBox_genre.TabIndex = 2;
             // 
