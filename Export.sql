@@ -1,3 +1,4 @@
+/* Database_library_manager, Lukáš Dvoøák, dvorak13@spsejecna.cz */
 USE [master]
 GO
 /****** Object:  Database [dvorak13]    Script Date: 10.01.2026 22:15:36 ******/
