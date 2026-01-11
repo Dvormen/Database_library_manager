@@ -28,7 +28,7 @@ namespace DBBooks.Data
             query.Parameters.AddWithValue("@available", book.Available);
             query.Parameters.AddWithValue("@state", book.State!.Value.ToString());
             query.Parameters.AddWithValue("@genre_id", book.Genre_id);
-            query.Parameters.AddWithValue("@authorId", book.Author_id);
+            query.Parameters.AddWithValue("@author_id", book.Author_id);
             conn.Open();
 
             query.ExecuteNonQuery();
