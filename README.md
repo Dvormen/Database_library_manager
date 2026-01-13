@@ -34,7 +34,7 @@ Windows Forms application for library database manipulation.
 
 3. Open JSON file `appsettings.json` and enter:
    - **Server** – Your server  
-   - **Database** – Name of your database  
+   - **Database** – Has to be set to dvorak13  
    - **User Id** – Your username  
    - **Password** – Your password  
 
